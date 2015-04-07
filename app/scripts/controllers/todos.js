@@ -7,7 +7,7 @@
  * # TodosCtrl
  * Controller to Todos of the superlistApp 
  */
-angular.module('superlistApp')
+/*angular.module('superlistApp')
   .controller('TodosCtrl', function ($scope) {
     $scope.todos = [
       {name: 'Primeiro item da lista'},
@@ -25,4 +25,20 @@ angular.module('superlistApp')
       $scope.todos.splice(index, 1);
     };
 
+  });*/
+
+angular.module('superlistApp')
+  .controller('TodosCtrl', function ($scope, Todo) {
+    $scope.todos = Todo.query();
+
+    $scope.addTodo = function () {
+  		$scope.todos.push($scope.todo);
+  		$scope.todo = '';
+	};
+
+	$scope.removeTodo = function (index) {
+      $scope.todos.splice(index, 1);
+    };
+
   });
+
