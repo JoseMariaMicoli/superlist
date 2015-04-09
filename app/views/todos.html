@@ -1,6 +1,7 @@
 <div class="container">
 	<h2>My todos</h2>
   
+<div ng-controller="TodosCtrl">
 	 <!-- Todos input -->
   	<form role="form" ng-submit="addTodo()">
     	<div class="row">
@@ -20,7 +21,7 @@
 		<p class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">
     		<input type="text" ng-model="todo.name" class="form-control">
     		<span class="input-group-btn">
-    			<button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+    			<button class="btn btn-success"><icon class="glyphicon glyphicon-ok"></icon></button>|<button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove"><icon class="glyphicon glyphicon-trash"></icon></button>
   			</span>
   		</p>
   	</div>
